@@ -1,0 +1,85 @@
+.navbar {
+    height: 90px;
+    background-color: #1a1a1a;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .nav-logo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin-left: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.menu-links {
+    display: flex;
+    gap: 24px;
+    border-right: 1px solid #999999;
+    padding-inline: 24px;
+}
+
+.menu-links a {
+    font-weight: 500;
+    color: #999999;
+    padding: 8px 16px;
+}
+
+.menu-links a:hover {
+    color: white;
+}
+
+button {
+    border: 0;
+    outline: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.login-btn {
+    font-weight: 500;
+    padding: 10px 22px;
+    background-color: transparent;
+    color: #999999;
+    border: 2px solid #0aa5ff;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #0aa5ff;
+    color: white;
+}
+
+.humberger-menu {
+    font-size: 32px;
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 52rem) {
+    .nav-menu {
+        display: none;
+    }
+
+    .humberger-menu {
+        display: block;
+    }
+}
+
+
+

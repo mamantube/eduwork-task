@@ -1,12 +1,11 @@
-import LikeButton from "./components/LikeButton";
-import Profile from "./components/Profile";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "./components/header/Header.jsx"
 
 
 function App() {
   return (
     <div className="App">
-      <Profile name="Muhammad Firman Hidayat" job="Front End Web Developer" />
-      <LikeButton />
+      <Header />
     </div>
   );
 }
