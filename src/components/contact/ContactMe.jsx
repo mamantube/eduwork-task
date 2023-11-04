@@ -23,11 +23,11 @@ function ContactMe() {
             <Row>
                 <Col className="contact-icon">
                 <div className="media-social">
-                    <a href="https://github.com/mamantube"><img src={githublogo} alt="" /></a>
-                    <a href="https://www.linkedin.com/in/muhammad-firman-hidayat-7a5293209/"><img src={linkedinlogo} alt="" /></a>
-                    <a href="mailto:firmanhiday.id007@gmail.com"><img src={gmaillogo} alt="" /></a>
-                    <a href="https://www.instagram.com/firman_dy07/"><img src={instagramlogo} alt="" /></a>
-                    <a href="https://web.facebook.com/m.hidayat.18"><img src={facebooklogo} alt="" /></a>
+                    <a href="https://github.com/mamantube" target="_blank" ><img src={githublogo} alt="" /></a>
+                    <a href="https://www.linkedin.com/in/muhammad-firman-hidayat-7a5293209/" target="_blank" ><img src={linkedinlogo} alt="" /></a>
+                    <a href="mailto:firmanhiday.id007@gmail.com" target="_blank" ><img src={gmaillogo} alt="" /></a>
+                    <a href="https://www.instagram.com/firman_dy07/" target="_blank" ><img src={instagramlogo} alt="" /></a>
+                    <a href="https://web.facebook.com/m.hidayat.18" target="_blank" ><img src={facebooklogo} alt="" /></a>
                 </div>
                 </Col>
             </Row>
