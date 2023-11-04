@@ -28,6 +28,7 @@ function ContactMe() {
                     <a href="mailto:firmanhiday.id007@gmail.com" target="_blank" ><img src={gmaillogo} alt="" /></a>
                     <a href="https://www.instagram.com/firman_dy07/" target="_blank" ><img src={instagramlogo} alt="" /></a>
                     <a href="https://web.facebook.com/m.hidayat.18" target="_blank" ><img src={facebooklogo} alt="" /></a>
+                    <a href="https://www.youtube.com/channel/UCaKHLfNcnPTpXi19IbU-IRQ" target="_blank" ><img src={youtubelogo} alt="" /></a>
                 </div>
                 </Col>
             </Row>
