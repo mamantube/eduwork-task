@@ -8,7 +8,7 @@ import  { Container, Row, Col, Image } from "react-bootstrap"
 class Header extends React.Component  {
     render() {
         return (
-            <Container fluid="lg">
+            <Container fluid>
                 <Row>
                     <Col>
                         <nav className="navbar">

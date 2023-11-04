@@ -1,0 +1,19 @@
+.about {
+    padding-top: 10%;
+    padding-left: 0%;
+}
+
+.about-line {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.about-line h3 {
+    font-weight: 600;
+}
+
+.icons {
+    margin-top: 4%;
+    margin-left: 25%;
+    
+}
