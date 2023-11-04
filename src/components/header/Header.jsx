@@ -14,11 +14,11 @@ class Header extends React.Component  {
                         <nav className="navbar">
                             <div className="nav-logo">
                                 <FontAwesomeIcon icon={faCode} style={{color: "#f1ebf4", fontSize:"22px"}} />
-                                <a href="">MamanTube</a>
+                                <a href="#">MamanTube</a>
                             </div>
                             <div className="nav-menu">
                                 <div className="menu-links">
-                                    <a href="">About Me</a>
+                                    <a href="about-me">About Me</a>
                                     <a href="">My Project</a>
                                     <a href="">Contact Me</a>
                                     <a href=""></a>

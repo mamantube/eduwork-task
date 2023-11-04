@@ -1,14 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AboutMe from './components/about/AboutMe.jsx';
+import ContactMe from './components/contact/ContactMe.jsx';
 import Header from "./components/header/Header.jsx"
+import MyProject from './components/myproject/MyProject.jsx';
 
 
 function App() {
   return (
-    <div className="App">
+    <body>
       <Header />
       <AboutMe />
-    </div>
+      <MyProject />
+      <ContactMe />
+    </body>
   );
 }
 
