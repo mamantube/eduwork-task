@@ -8,7 +8,7 @@ class FormData extends React.Component {
         nama: "",
         alamat: "",
         gender: "",
-        divisi: "",
+        divisi: "Pilih Divisi Pekerjaan",
         staff: false
     }
     handleSubmit = (e) => {
@@ -24,7 +24,7 @@ class FormData extends React.Component {
             nama: "",
             alamat: "",
             gender: "",
-            divisi: "",
+            divisi: "Pilih Divisi Pekerjaan",
             staff: false
         })
     }
@@ -56,16 +56,16 @@ class FormData extends React.Component {
 
                     <Form.Group className="mb-3" id="formGridCheckBox" >
                         <Form.Label>Gender</Form.Label>
-                        <Form.Check name="gender" required label="Laki-Laki" type='radio' onChange={ e => this.setState({gender: e.target.value})} defaultChecked={this.state.gender} />
-                        <Form.Check name="gender" required label="Perempuan" type='radio' onChange={ e => this.setState({gender: e.target.value})} defaultChecked={this.state.gender} />
+                        <Form.Check name="gender" required label="Laki-Laki" type='radio' onChange={ e => this.setState({gender: e.target.value})} Checked={this.state.gender === "Laki-Laki"} />
+                        <Form.Check name="gender" required label="Perempuan" type='radio' onChange={ e => this.setState({gender: e.target.value})} Checked={this.state.gender === "Perempuan"} />
                     </Form.Group>
             
                     <Form.Select aria-label="Default select example" className="mb-3" name="divisi" onChange={ e => this.setState({divisi: e.target.value})} >
                         <Form.Label>Divisi</Form.Label>
                         <option>Pilih Divisi Pekerjaan</option>
-                        <option defaultValue={this.state.divisi} >Front End Developer</option>
-                        <option defaultValue={this.state.divisi} >Back-End Developer</option>
-                        <option defaultValue={this.state.divisi} >Development dan Operations</option>
+                        <option>Front End Developer</option>
+                        <option>Back-End Developer</option>
+                        <option>Development dan Operations</option>
                     </Form.Select>
                             
                     <Form.Group className="mb-3" id="formGridCheckbox">
