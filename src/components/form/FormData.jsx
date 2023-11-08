@@ -1,26 +1,64 @@
 import { Form, Col, Row, Button, Container} from "react-bootstrap";
 import "./FormData.css";
 import React from "react";
+import ShowError from "./ShowErrors"
 
 
 class FormData extends React.Component {
     state = {
+        email: "",
+        password: "",
         nama: "",
         alamat: "",
         gender: "",
         divisi: "Pilih Divisi Pekerjaan",
-        staff: false
+        staff: false,
+        errors: []
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        alert(`
-        nama: ${this.state.nama}
-        alamat: ${this.state.alamat}
-        gender: ${this.state.gender}
-        divisi: ${this.state.divisi}
-        staff: ${this.state.staff ? "YES" : "NO"}
-        `)
+        const {email, password} = this.state;
+
+        let message = []
+
+        if (email.length === 0) {
+            message = [...message, "Email tidak boleh kosong"];
+        }
+        
+        if (password.length === 0) {
+            message = [...message, "Password tidak boleh kosong"]
+        }
+
+        const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+        if(!re.test(String(email).toLowerCase())) {
+            message = [...message, "Email yang anda masukkan tidak valid"]
+        }
+
+        if(password.length < 8) {
+            message = [...message, "Masukkan Minimal Delapan Huruf"]
+        }
+
+        if (message.length > 0) {
+            this.setState({
+                errors: message
+            })
+        } else {
+            alert(`
+            REGISTRASI BERHASIL!!!
+            email: ${this.state.email}
+            password: ${this.state.password}
+            nama: ${this.state.nama}
+            alamat: ${this.state.alamat}
+            gender: ${this.state.gender}
+            divisi: ${this.state.divisi}
+            staff: ${this.state.staff ? "YES" : "NO"}
+            `)    
+        }
+
         this.setState({
+            email: "",
+            password: "",
             nama: "",
             alamat: "",
             gender: "",
@@ -32,17 +70,20 @@ class FormData extends React.Component {
         return (
             <Container fluid>
                 <Form className="form-box" onSubmit={this.handleSubmit}>
-                    {/* <Row className="mb-3">
+                    <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridEmail">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" placeholder="Masukkan Email" />
+                            <Form.Control type="email" name="email" placeholder="Masukkan Email" onChange={ e => this.setState({email: e.target.value})} value={this.state.email} />
                         </Form.Group>
                 
                         <Form.Group as={Col} controlId="formGridPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Masukkan Password" />
+                            <Form.Control type="password" name="password" placeholder="Masukkan Minimal 8 huruf" onChange={ e => this.setState({password: e.target.value})} value={this.state.password} />
                         </Form.Group>
-                    </Row> */}
+                        {
+                            this.state.errors && <ShowError errors={this.state.errors}/>
+                        }
+                    </Row>
             
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Nama</Form.Label>
@@ -56,8 +97,8 @@ class FormData extends React.Component {
 
                     <Form.Group className="mb-3" id="formGridCheckBox" >
                         <Form.Label>Gender</Form.Label>
-                        <Form.Check name="gender" required label="Laki-Laki" type='radio' onChange={ e => this.setState({gender: e.target.value})} Checked={this.state.gender === "Laki-Laki"} />
-                        <Form.Check name="gender" required label="Perempuan" type='radio' onChange={ e => this.setState({gender: e.target.value})} Checked={this.state.gender === "Perempuan"} />
+                        <Form.Check name="gender" required label="Laki-Laki" type='radio' value="Laki-Laki" onChange={ e => this.setState({gender: e.target.value})} Checked={this.state.gender === "Laki-Laki"} />
+                        <Form.Check name="gender" required label="Perempuan" type='radio' value="Perempuan" onChange={ e => this.setState({gender: e.target.value})} Checked={this.state.gender === "Perempuan"} />
                     </Form.Group>
             
                     <Form.Select aria-label="Default select example" className="mb-3" name="divisi" onChange={ e => this.setState({divisi: e.target.value})} >

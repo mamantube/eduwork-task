@@ -4,3 +4,11 @@
     border: 2px solid black;
     border-radius: 5px;
 }
+
+.error-warning {
+    color : red;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+}
