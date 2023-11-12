@@ -44,6 +44,7 @@ class FormData extends React.Component {
                 errors: message
             })
         } else {
+           
             alert(`
             REGISTRASI BERHASIL!!!
             email: ${this.state.email}
@@ -53,18 +54,22 @@ class FormData extends React.Component {
             gender: ${this.state.gender}
             divisi: ${this.state.divisi}
             staff: ${this.state.staff ? "YES" : "NO"}
-            `)    
+            errors: ${this.state.errors}
+            `)  
+
+            this.setState({
+                email: "",
+                password: "",
+                nama: "",
+                alamat: "",
+                gender: "",
+                divisi: "Pilih Divisi Pekerjaan",
+                staff: false,
+                errors: []
+            })
         }
 
-        this.setState({
-            email: "",
-            password: "",
-            nama: "",
-            alamat: "",
-            gender: "",
-            divisi: "Pilih Divisi Pekerjaan",
-            staff: false
-        })
+        
     }
     render() {
         return (
